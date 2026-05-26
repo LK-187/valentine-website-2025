@@ -1,37 +1,37 @@
 window.VALENTINE_CONFIG = {
-    valentineName: "أريج",
-    pageTitle: "كل عام وأنتِ عيدي يا أريج 💝",
+    valentineName: "اريج",
+    pageTitle: "كل عام وانتِ عيدي يا اريج",
     floatingEmojis: {
         hearts: ["❤️", "💖", "💝"],
         bears: ["🧸"]
     },
     questions: {
         first: {
-            text: "أريج.. عندي سؤال الج بمناسبة العيد؟ 🥺",
-            yesBtn: "شنو هو؟ 🤔",
-            noBtn: "بعدين 🙄",
-            secretAnswer: "أني ما أعيد مثل الباقين.. لأن أنتِ عيدي! ❤️"
+            text: "اريج.. عندي سؤال الج بمناسبة العيد؟",
+            yesBtn: "شنو هو؟",
+            noBtn: "بعدين",
+            secretAnswer: "اني ما اعيد مثل الباقين.. لان انتِ عيدي!"
         },
         second: {
             text: "زين قيسيلي.. شكد غلاتج وحبج بقلبي؟",
-            startText: "هلكد! 📈",
-            nextBtn: "التالي ❤️"
+            startText: "هلكد!",
+            nextBtn: "التالي"
         },
         third: {
-            text: "كل عام وأنتِ عيدي، وأجمل أيام عمري وموجودة بحياتي؟ 🌸",
-            yesBtn: "أكيد يا روحي! 💋",
-            noBtn: "لا 🤐"
+            text: "كل عام وانتِ عيدي، واجمل ايام عمري وموجودة بحياتي؟",
+            yesBtn: "اكيد يروحي! 💋",
+            noBtn: "لا"
         }
     },
     loveMessages: {
-        extreme: "واوووو كل هذا غلا؟؟ 🥰🚀💝",
-        high: "إلى اللانهاية وما بعدها! 🚀💝",
-        normal: "وأكثر بعد بمليون مرة! 🥰"
+        extreme: "واوووو كل هذا غلا؟؟",
+        high: "إلى اللانهاية وما بعدها!",
+        normal: "واكثر بعد بمليون مرة!"
     },
     celebration: {
-        title: "يا أحلى أعيادي وأسعد أيام عمري.. 🎉",
-        message: "كل عيد وأنتِ وياي، ربي يخليج الي ولا يحرمني من عيونج.. اعشقج وأموت عليج يا بعد بيتي 🤍",
-        emojis: "🎁💖🤗💝💋❤️💕"
+        title: "يا احلى اعيادي واسعد ايام عمري..",
+        message: "كل عيد وانتِ وياي، ربي يخليج الي ولا يحرمني من عيونج.. اعشقج واموت عليج يا بعد بيتي",
+        emojis: ""
     },
     colors: {
         backgroundStart: "#ffafbd",
@@ -41,17 +41,17 @@ window.VALENTINE_CONFIG = {
         textColor: "#ff4757"
     },
     animations: {
-        floatDuration: "15s",
-        floatDistance: "50px",
-        bounceSpeed: "0.5s",
-        heartExplosionSize: 1.5
+        floatDuration: "15s",           
+        floatDistance: "0px", 
+        bounceSpeed: "0s",    
+        heartExplosionSize: 1.0         
     },
     music: {
         enabled: true,
         autoplay: true,
         musicUrl: "https://pub-c5e31b5cdafb419a91624d1024284d23.r2.dev/biyn_alrumwsh.mp3#t=199",
-        startText: "🎵 تشغيل الأغنية",
-        stopText: "🔇 إيقاف",
+        startText: "تشغيل الاغنية",
+        stopText: "ايقاف",
         volume: 0.6
     }
 };
