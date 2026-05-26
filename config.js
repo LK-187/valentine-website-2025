@@ -2,7 +2,7 @@ window.VALENTINE_CONFIG = {
     valentineName: "اريج",
     pageTitle: "كل عام وانتِ عيدي يا اريج",
     floatingEmojis: {
-        hearts: ["❤️"], // تركنا ايموجي واحد لكن قمنا بتصفير حركته تماماً بالأسفل لكي لا يظهر ولا يسبب undefined
+        hearts: ["❤️"], // تركناها لتجنب ضرب كود الصوت
         bears: ["🧸"]   
     },
     questions: {
@@ -41,10 +41,10 @@ window.VALENTINE_CONFIG = {
         textColor: "#ff4757"
     },
     animations: {
-        floatDuration: "0s",         // تصفير الوقت يمنع ظهورها نهائياً
-        floatDistance: "0px",        // تصفير المسافة
-        bounceSpeed: "0s",           
-        heartExplosionSize: 0.0      
+        floatDuration: "20s",           
+        floatDistance: "0px", // تصفير المسافة يمنعها من الصعود للأعلى
+        bounceSpeed: "0s",    
+        heartExplosionSize: 0.0 // إلغاء انفجار القلوب بالنهاية تماماً
     },
     music: {
         enabled: true,
@@ -52,6 +52,19 @@ window.VALENTINE_CONFIG = {
         musicUrl: "https://pub-c5e31b5cdafb419a91624d1024284d23.r2.dev/biyn_alrumwsh.mp3#t=199",
         startText: "🎵 تشغيل الاغنية", 
         stopText: "🔇 ايقاف",  
-        volume: 0.8
+        volume: 1.0 // رفعنا الصوت لأعلى درجة
     }
 };
+
+// خدعة برمجية لحذف وإخفاء الإيموجيات من الشاشة نهائياً فور تحميل الصفحة بدون تخريب الكود
+setTimeout(() => {
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .floating-emoji, [class*="emoji"], [id*="emoji"], .heart-explosion { 
+            display: none !important; 
+            opacity: 0 !important; 
+            visibility: hidden !important; 
+        }
+    `;
+    document.head.appendChild(style);
+}, 100);
