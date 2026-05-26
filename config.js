@@ -2,8 +2,9 @@ window.VALENTINE_CONFIG = {
     valentineName: "اريج",
     pageTitle: "كل عام وانتِ عيدي يا اريج",
     floatingEmojis: {
-        hearts: ["❤️"], // مصفوفة وهمية لتجنب أخطاء السكربت الأصلي
-        bears: ["🧸"]   
+        // استخدام مسافة صفرية شفافة تمنع الـ undefined وتخفي القلوب تماماً
+        hearts: ["\u200B"], 
+        bears: ["\u200B"]   
     },
     questions: {
         first: {
@@ -24,3 +25,34 @@ window.VALENTINE_CONFIG = {
         }
     },
     loveMessages: {
+        extreme: "الله واني اموت عليج هم 🙈",
+        high: "الله واني اموت عليج هم 🙈",
+        normal: "الله واني اموت عليج هم 🙈"
+    },
+    celebration: {
+        title: "يا احلى اعيادي واسعد ايام عمري..",
+        message: "كل عيد وانتِ وياي، ربي يخليج الي ولا يحرمني من عيونج.. اعشقج واموت عليج يا بعد بيتي",
+        emojis: ""
+    },
+    colors: {
+        backgroundStart: "#ffafbd",
+        backgroundEnd: "#ffc3a0",
+        buttonBackground: "#ff6b6b",
+        buttonHover: "#ff8787",
+        textColor: "#ff4757"
+    },
+    animations: {
+        floatDuration: "20s",           
+        floatDistance: "0px", 
+        bounceSpeed: "0s",    
+        heartExplosionSize: 0.0 
+    },
+    music: {
+        enabled: false, // الأغنية مقفلة تماماً ومحذوفة
+        autoplay: false,
+        musicUrl: "",
+        startText: "", 
+        stopText: "",  
+        volume: 0.0
+    }
+};
