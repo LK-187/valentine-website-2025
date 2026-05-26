@@ -41,17 +41,72 @@ window.VALENTINE_CONFIG = {
         textColor: "#ff4757"
     },
     animations: {
-        floatDuration: "0s", // تصفير الوقت يخفي الايموجيات تماماً بدون ضرب كود الصوت          
+        floatDuration: "0s",           
         floatDistance: "0px", 
         bounceSpeed: "0s",    
         heartExplosionSize: 0.0 
     },
     music: {
-        enabled: true,
-        autoplay: true,
-        musicUrl: "https://ia600205.us.archive.org/3/items/biyn_alrumwsh/biyn_alrumwsh.mp3#t=199", // رابط جديد مستقر وعالمي وموثوق للمتصفحات
-        startText: "🎵 تشغيل الاغنية", 
-        stopText: "🔇 ايقاف",  
+        enabled: false, // قفلنا النظام القديم والزر الفوقاني تماماً
+        autoplay: false,
+        musicUrl: "https://ia600205.us.archive.org/3/items/biyn_alrumwsh/biyn_alrumwsh.mp3#t=199",
+        startText: "", 
+        stopText: "",  
         volume: 0.9
     }
 };
+
+// كود إخفاء الإيموجيات كلياً بالخلفية
+const style = document.createElement('style');
+style.innerHTML = `
+    .floating-emoji, [class*="emoji"], [id*="emoji"], .heart-explosion, .music-controls { 
+        display: none !important; opacity: 0 !important; visibility: hidden !important; 
+    }
+`;
+document.head.appendChild(style);
+
+// سكربت مراقبة شاشة النهاية لإنشاء صفحة الأغنية الخاصة بعد المعايدة
+let musicTriggered = false;
+setInterval(() => {
+    const celebrationCard = document.querySelector('.celebration-card, #celebration, .final-page');
+    if (celebrationCard && !musicTriggered) {
+        musicTriggered = true;
+        
+        // إنشاء زر الانتقال لصفحة الأغنية بداخل بطاقة المعايدة
+        const nextToMusicBtn = document.createElement('button');
+        nextToMusicBtn.innerText = "اسمعي هالاغنية يروحي 🎵";
+        nextToMusicBtn.style.cssText = `
+            display: block; margin: 20px auto 0 auto; padding: 12px 24px;
+            background-color: #ff6b6b; color: white; border: none;
+            border-radius: 20px; font-size: 16px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.3); font-family: inherit;
+        `;
+        celebrationCard.appendChild(nextToMusicBtn);
+        
+        // عند الضغط على الزر تفتح الصفحة الخاصة بالأغنية
+        nextToMusicBtn.addEventListener('click', () => {
+            // مسح محتوى الصفحة بالكامل لعمل صفحة جديدة ونظيفة للأغنية
+            document.body.innerHTML = `
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: linear-gradient(to bottom, #ffafbd, #ffc3a0); font-family: inherit; text-align: center; padding: 20px; box-sizing: border-box;">
+                    <h2 style="color: #ff4757; margin-bottom: 30px; font-size: 24px;">بين الرموش.. ❤️</h2>
+                    <button id="playAudioBtn" style="padding: 15px 40px; background-color: #ff4757; color: white; border: none; border-radius: 30px; font-size: 18px; cursor: pointer; box-shadow: 0 5px 20px rgba(255,71,87,0.4);">
+                        ▶ تشغيل الاغنية
+                    </button>
+                    <audio id="bgMusic" src="https://ia600205.us.archive.org/3/items/biyn_alrumwsh/biyn_alrumwsh.mp3#t=199"></audio>
+                </div>
+            `;
+            
+            // تشغيل الأغنية فور الضغط على زر التشغيل بالصفحة الخاصة
+            document.getElementById('playAudioBtn').addEventListener('click', function() {
+                const audio = document.getElementById('bgMusic');
+                audio.volume = window.VALENTINE_CONFIG.music.volume;
+                audio.play().then(() => {
+                    this.innerText = "🎵 شغالة هسة..";
+                    this.style.backgroundColor = "#2ed573";
+                }).catch(err => {
+                    alert("اضغطي مرة ثانية لتشغيل الصوت");
+                });
+            });
+        });
+    }
+}, 500);
