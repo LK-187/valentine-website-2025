@@ -2,8 +2,7 @@ window.VALENTINE_CONFIG = {
     valentineName: "اريج",
     pageTitle: "كل عام وانتِ عيدي يا اريج",
     floatingEmojis: {
-        hearts: ["❤️", "💖", "💝"],
-        bears: ["🧸"]
+    
     },
     questions: {
         first: {
@@ -13,7 +12,7 @@ window.VALENTINE_CONFIG = {
             secretAnswer: "اني ما اعيد مثل الباقين.. لان انتِ عيدي!"
         },
         second: {
-            text: "زين قيسيلي.. شكد غلاتج وحبج بقلبي؟",
+            text: "شگد تحبيني؟",
             startText: "هلكد!",
             nextBtn: "التالي"
         },
@@ -29,7 +28,7 @@ window.VALENTINE_CONFIG = {
         normal: "واكثر بعد بمليون مرة!"
     },
     celebration: {
-        title: "يا احلى اعيادي واسعد ايام عمري..",
+        title: "الله واني اموت عليج هم 🙈",
         message: "كل عيد وانتِ وياي، ربي يخليج الي ولا يحرمني من عيونج.. اعشقج واموت عليج يا بعد بيتي",
         emojis: ""
     },
