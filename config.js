@@ -1,4 +1,4 @@
-const config = {
+window.VALENTINE_CONFIG = {
     valentineName: "أريج",
     pageTitle: "كل عام وأنتِ عيدي يا أريج 💝",
     floatingEmojis: {
@@ -55,5 +55,3 @@ const config = {
         volume: 0.6
     }
 };
-
-export default config;
