@@ -2,6 +2,7 @@ window.VALENTINE_CONFIG = {
     valentineName: "اريج",
     pageTitle: "كل عام وانتِ عيدي يا اريج",
     floatingEmojis: {
+        // استخدام مسافة صفرية شفافة تمنع الـ undefined وتخفي القلوب تماماً
         hearts: ["\u200B"], 
         bears: ["\u200B"]   
     },
@@ -38,9 +39,20 @@ window.VALENTINE_CONFIG = {
         backgroundEnd: "#ffc3a0",
         buttonBackground: "#ff6b6b",
         buttonHover: "#ff8787",
-        textColor: "#000000" // تم تغيير لون الخط إلى الأسود
+        textColor: "#ff4757"
     },
     animations: {
         floatDuration: "20s",           
         floatDistance: "0px", 
-        bounceSpeed: "
+        bounceSpeed: "0s",    
+        heartExplosionSize: 0.0 
+    },
+    music: {
+        enabled: false, // الأغنية مقفلة تماماً ومحذوفة
+        autoplay: false,
+        musicUrl: "",
+        startText: "", 
+        stopText: "",  
+        volume: 0.0
+    }
+};
