@@ -2,8 +2,8 @@ window.VALENTINE_CONFIG = {
     valentineName: "اريج",
     pageTitle: "كل عام وانتِ عيدي يا اريج",
     floatingEmojis: {
-        hearts: [], // تم مسح القلوب الطايرة تماماً
-        bears: []   // تم مسح الدباديب الطايرة تماماً
+        hearts: [" "], // مسافة فارغة تمنع ظهور undefined وتجعل الخلفية صافية تماماً
+        bears: [" "]   
     },
     questions: {
         first: {
@@ -44,14 +44,14 @@ window.VALENTINE_CONFIG = {
         floatDuration: "15s",           
         floatDistance: "0px", 
         bounceSpeed: "0s",    
-        heartExplosionSize: 0.0 // تم تصفير انفجار القلوب عند النهاية لجعلها صافية تماماً
+        heartExplosionSize: 0.0 
     },
     music: {
         enabled: true,
-        autoplay: true, // تشتغل تلقائياً بالخلفية فوراً مع تقدم الصفحات والوصول للنهاية
+        autoplay: true,
         musicUrl: "https://pub-c5e31b5cdafb419a91624d1024284d23.r2.dev/biyn_alrumwsh.mp3#t=199",
-        startText: "", // تم مسح النص العلوي لزر التشغيل
-        stopText: "",  
+        startText: "🎵 تشغيل الاغنية", 
+        stopText: "🔇 ايقاف",  
         volume: 0.6
     }
 };
